@@ -1,8 +1,10 @@
 import React from "react";
+import Layout from "../../components/Layout";
 
 const Details = ({ res }) => {
   console.log(res);
   return (
+    <Layout>
     <div>
       <div>
         <img src={res?.image} alt="" />
@@ -17,6 +19,7 @@ const Details = ({ res }) => {
         <p>{res.status}</p>
       </div>
     </div>
+    </Layout>
   );
 };
 
