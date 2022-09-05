@@ -1,10 +1,13 @@
 import React from "react";
 import Layout from "../../components/Layout";
-
+import Head from "next/head"
 const Details = ({ res }) => {
   console.log(res);
   return (
     <Layout>
+      <Head>
+          <title>Characters Details</title>
+      </Head>
       <div className="z">
         <div>
           <div>

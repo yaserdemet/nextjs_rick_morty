@@ -6,9 +6,14 @@ import Navbar from "../components/Navbar";
 import styles from "../styles/Home.module.css";
 import Layout from "../components/Layout"
 
+
 const main = ({ character }) => {
   return (
   <Layout>
+    <Head>
+      <title>Main</title>
+      <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvIkGpmypTxbmM5WrEA4LDpEfvfcQvgoP1bg&usqp=CAU" type="image/x-icon" />
+    </Head>
 
 <div className={`styles.container `}>
     <Cards character={character} />
