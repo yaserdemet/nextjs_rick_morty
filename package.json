@@ -15,7 +15,10 @@
     "@mui/material": "^5.10.3",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-material-ui-carousel": "^3.4.2",
+    "react-swipeable-views": "^0.14.0",
+    "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
     "eslint": "8.23.0",

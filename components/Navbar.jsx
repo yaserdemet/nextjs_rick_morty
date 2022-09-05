@@ -13,6 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Link from "next/link"
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
@@ -46,7 +47,7 @@ function Navbar(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' , backgroundColor : "black" }}>
+    <Box sx={{ display: 'flex', marginBottom : "-2rem" }}>
       <AppBar component="nav"  sx={{ display: 'flex' , backgroundColor : "#333629" }}>
         <Toolbar>
           <IconButton
@@ -66,13 +67,17 @@ function Navbar(props) {
             <img src="https://the-rich-and-morty.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-2.9fa6f72b.png&w=256&q=75" alt="ricky"  width="200px"/>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-           
-              <Button  sx={{ color: '#fff' }}>
+           <Link href="/">
+           <Button  sx={{ color: '#fff' }}>
                 HOME
               </Button>
+              </Link>
+              <Link href="/main">
               <Button sx={{ color: '#fff' }}>
-                ABOUT
+                CHARACTERS
               </Button>
+              </Link>
+             
               <Button sx={{ color: '#fff' }}>
                 CONTACT
               </Button>

@@ -6,10 +6,10 @@ const Cards = ({ character }) => {
   const {results , info} = character
 //   console.log(results);
   return (
-    <div>
+    <div className="y">
       {results?.map((card, index) => {
         return (
-          <div key={index}>
+          <div key={index} >
             <Card card={card} info = {info}/>
           </div>
         );

@@ -5,20 +5,32 @@ const Details = ({ res }) => {
   console.log(res);
   return (
     <Layout>
-    <div>
-      <div>
-        <img src={res?.image} alt="" />
-      </div>
-      <div>
-        hello  <span>
-          {res.id}
-        </span>
-      </div>
+      <div className="z">
+        <div>
+          <div>
+            <img src={res?.image} alt="" />
+          </div>
+        </div>
 
-      <div>
-        <p>{res.status}</p>
+        <div>
+          <div>
+            <p>Name : {res.name}</p>
+          </div>
+
+          <div>
+            <p>Species : {res.species}</p>
+          </div>
+          <div>
+            <p>Status : {res.status}</p>
+          </div>
+          <div>
+            <p>Location : {res.location.name}</p>
+          </div>
+          <div>
+            <p>Gender : {res.gender}</p>
+          </div>
+        </div>
       </div>
-    </div>
     </Layout>
   );
 };
@@ -29,10 +41,9 @@ export const getServerSideProps = async (context) => {
   );
   const res = await data.json();
   return {
-
-   props : {
-       res,
-   }
+    props: {
+      res,
+    },
   };
 };
 export default Details;
