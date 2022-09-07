@@ -112,7 +112,7 @@ function Navbar(props) {
               </select> */}
 
             <FormControl sx={{ m: 1, minWidth: 50 , color : "white"}} size="small">
-              <InputLabel id="demo-select-small">Language</InputLabel>
+              <InputLabel id="demo-select-small">Lan</InputLabel>
               <Select
                 labelId="demo-select-small"
                 id="demo-select-small"
