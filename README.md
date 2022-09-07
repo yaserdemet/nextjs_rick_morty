@@ -1,3 +1,42 @@
+### NextJs ile birlikte dil seçenegi kullanmak için 
+```
+yarn add next-i18next
+
+.
+└── public
+    └── locales
+        ├── en
+        |   └── common.json
+        └── de
+            └── common.json
+ {
+    "nav1" : "Home",
+    "nav2" : "Characters",
+    "nav3" : "Detaıls"
+}
+
+{
+    "nav1" : "Anasayfa",
+    "nav2" : "Karakterler",
+    "nav3" : "Detaylar"
+}
+
+    const router = useRouter();
+    const { locale } = router;
+    const t = locale === "tr" ? tr : en;
+
+    const handleChange = (e) => {
+    const locale = e.target.value;
+    router.push("/", "/", { locale });
+  };
+
+   <Button>
+   {t.nav1} 
+   buraya değişken localesde değişken olarak atadığımız değerleri atıyoruz.
+   </Button>
+
+```
+
 ### How to make dynamic page with nextJs 
 
 ```
