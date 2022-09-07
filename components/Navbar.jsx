@@ -14,11 +14,28 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Link from "next/link"
+import { useRouter } from 'next/router';
+import en from "../public/locales/en/common.json"
+import tr from "../public/locales/tr/common.json"
+import { useState } from 'react';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
 
 function Navbar(props) {
+
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "tr" ? tr : en;
+  const [change, setChange] = useState(false);
+
+  const handleChange = (e) => {
+    const locale = e.target.value;
+    router.push("/", "/", { locale });
+  };
+
+
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -69,18 +86,23 @@ function Navbar(props) {
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
            <Link href="/">
            <Button  sx={{ color: '#fff' }}>
-                HOME
+            {t.nav1}
               </Button>
               </Link>
               <Link href="/main">
               <Button sx={{ color: '#fff' }}>
-                CHARACTERS
+               {t.nav2}
               </Button>
               </Link>
              
               <Button sx={{ color: '#fff' }}>
-                CONTACT
+            {t.nav3}
               </Button>
+
+              <select onChange={handleChange}  defaultValue={locale} name="" id="">
+                <option value="en">en</option>
+                <option value="tr">tr</option>
+              </select>
             
           </Box>
         </Toolbar>
