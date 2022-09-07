@@ -1,3 +1,24 @@
+### How to make dynamic page with nextJs 
+
+```
+  <Link href="/posts/[id]" as={`/posts/${card.id}`}>
+  burada post folderın altındaki id dynamic page ine gönderiyor.
+  her gelen id ye göre fetch işlemi yapıyor. Tıklandığında ilgili [id].js sayfasına atıyor.
+```
+
+```
+export const getServerSideProps = async (context) => {
+  const data = await fetch(
+    `https://rickandmortyapi.com/api/character/${context.params.id}`
+  );
+  const res = await data.json();
+  return {
+    props: {
+      res,
+    },
+  };
+};
+```
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
