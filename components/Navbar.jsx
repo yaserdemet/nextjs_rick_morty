@@ -18,6 +18,10 @@ import { useRouter } from 'next/router';
 import en from "../public/locales/en/common.json"
 import tr from "../public/locales/tr/common.json"
 import { useState } from 'react';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
@@ -99,10 +103,27 @@ function Navbar(props) {
             {t.nav3}
               </Button>
 
-              <select onChange={handleChange}  defaultValue={locale} name="" id="">
+              {/* <select onChange={handleChange}  defaultValue={locale} name="" id="">
                 <option value="en">en</option>
                 <option value="tr">tr</option>
-              </select>
+              </select> */}
+
+              <FormControl sx={{ m: 1, minWidth: 50 }} size="small">
+      <InputLabel id="demo-select-small">Age</InputLabel>
+      <Select
+        labelId="demo-select-small"
+        id="demo-select-small"
+        defaultValue={locale}
+        label="Age"
+        onChange={handleChange}
+      >
+       
+        <MenuItem value="en">En</MenuItem>
+        <MenuItem value="tr">Tr</MenuItem>
+   
+      </Select>
+    </FormControl>
+
             
           </Box>
         </Toolbar>
