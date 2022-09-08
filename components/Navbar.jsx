@@ -22,8 +22,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { LocalSee } from "@mui/icons-material";
-import ReactFlagsSelect from "react-flags-select";
+import { useSession } from "next-auth/react";
 import Component from "./Auth";
 
 const drawerWidth = 240;
@@ -31,6 +30,8 @@ const navItems = ["Home", "About", "Contact"];
 
 function Navbar(props) {
   const router = useRouter();
+  const { data: session } = useSession();
+  console.log(session);
   const { locale } = router;
   const t = locale === "tr" ? tr : en;
   const [change, setChange] = useState(false);
@@ -97,16 +98,29 @@ function Navbar(props) {
               alt="ricky"
               width="200px"
             />
+            <Box variant="span" component = "span" style={{marginLeft : "4rem"}} sx={{ display: { xs: "none", sm: "inline" , alignItems : "center" } }}>
+              {session && <span style={{   color: "rgb(84, 146, 175)" }}>{`Welcome ${session.user.name.toUpperCase()}`}</span>}
+
+              {session && (
+                <img
+                  src={session.user.image}
+                  alt=""
+                  width="50px"
+                  style={{ borderRadius: "50%" }}
+                />
+              )}
+            </Box>
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", sm: "block" } }} style={{display : "flex" , gap : "2rem"}}>
             <Link href="/">
-              <Button sx={{ color: "#fff" }}>{t.nav1}</Button>
+ 
+              <Button sx={{   color: "rgb(84, 146, 175)" }}>{t.nav1}</Button>
             </Link>
             <Link href="/main">
-              <Button sx={{ color: "#fff" }}>{t.nav2}</Button>
+              <Button sx={{   color: "rgb(84, 146, 175)" }}>{t.nav2}</Button>
             </Link>
 
-            <Button sx={{ color: "#fff" }}>{t.nav3}</Button>
+        
             <Component />
 
             {/* <select onChange={handleChange}  defaultValue={locale} name="" id="">
@@ -114,7 +128,10 @@ function Navbar(props) {
                 <option value="tr">tr</option>
               </select> */}
 
-            <FormControl sx={{ m: 1, minWidth: 50 , color : "white"}} size="small">
+            <FormControl
+              sx={{ m: 1, minWidth: 50, color: "white" }}
+              size="small"
+            >
               <InputLabel id="demo-select-small">Lan</InputLabel>
               <Select
                 labelId="demo-select-small"
@@ -122,7 +139,6 @@ function Navbar(props) {
                 defaultValue={locale}
                 label="Age"
                 onChange={handleChange}
-                
               >
                 <MenuItem value="en">En</MenuItem>
                 <MenuItem value="tr">Tr</MenuItem>
