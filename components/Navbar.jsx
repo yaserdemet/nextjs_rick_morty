@@ -24,6 +24,8 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { LocalSee } from "@mui/icons-material";
 import ReactFlagsSelect from "react-flags-select";
+import Component from "./Auth";
+
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
 
@@ -105,6 +107,7 @@ function Navbar(props) {
             </Link>
 
             <Button sx={{ color: "#fff" }}>{t.nav3}</Button>
+            <Component />
 
             {/* <select onChange={handleChange}  defaultValue={locale} name="" id="">
                 <option value="en">en</option>
