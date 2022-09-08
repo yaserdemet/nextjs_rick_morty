@@ -1,5 +1,7 @@
 {
     "nav1" : "Home",
     "nav2" : "Characters",
-    "nav3" : "Detaıls"
+    "nav3" : "Detaıls",
+    "btn" : "Sıgn In",
+    "btn1" : "Sign Out"
 }

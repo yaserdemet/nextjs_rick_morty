@@ -48,6 +48,12 @@ function Navbar(props) {
     setMobileOpen(!mobileOpen);
   };
 
+
+  const uppLetter = (str) => {
+   return   str.slice(0,1).toUpperCase() + str.slice(1,5) + " " +  str.slice(5,6).toUpperCase() + str.slice(6)
+  }
+
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -92,24 +98,28 @@ function Navbar(props) {
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            style={{dispay : "flex" , justifyContent : "center"}}
           >
             <img
               src="https://the-rich-and-morty.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-2.9fa6f72b.png&w=256&q=75"
               alt="ricky"
               width="200px"
             />
-            <Box variant="span" component = "span" style={{marginLeft : "4rem"}} sx={{ display: { xs: "none", sm: "inline" , alignItems : "center" } }}>
-              {session && <span style={{   color: "rgb(84, 146, 175)" }}>{`Welcome ${session.user.name.toUpperCase()}`}</span>}
-
+         
+            <Box variant="span" component = "span" style={{marginLeft : "8rem" }} sx={{ display: { xs: "none", sm: "inline" , alignItems : "center" } }}>
+              {/* {session && <span style={{   color: "rgb(84, 146, 175)" ,justifyContent : "center" }}>{`Welcome ${uppLetter(session.user.name)}`}</span>} */}
+    
               {session && (
                 <img
                   src={session.user.image}
                   alt=""
                   width="50px"
-                  style={{ borderRadius: "50%" }}
+                  style={{ borderRadius: "50%" , marginLeft : "16rem"}}
                 />
               )}
             </Box>
+        
+           
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }} style={{display : "flex" , gap : "2rem"}}>
             <Link href="/">

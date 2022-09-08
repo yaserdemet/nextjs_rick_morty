@@ -1,5 +1,7 @@
 {
     "nav1" : "Anasayfa",
     "nav2" : "Karakterler",
-    "nav3" : "Detaylar"
+    "nav3" : "Detaylar",
+    "btn" : "Giriş Yap",
+    "btn1" : "Çıkış Yap"
 }
