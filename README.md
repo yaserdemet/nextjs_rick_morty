@@ -1,3 +1,40 @@
+
+![Animation](https://user-images.githubusercontent.com/99739515/189138222-195e59d7-a3ce-4ddc-ba6a-d8a1396bcbd9.gif)
+
+### In this project i used
+
+🛠 NextJs Auth
+
+🛠 Next-i18next library for translation
+
+🛠 Fetch Api
+
+🛠 Dynamic Routes
+
+🛠 Material Ui
+
+🛠 React Hooks
+
+🛠 State Component Logic
+
+🛠 Next Router
+
+### NextJs Auth kullanmak için;
+
+```
+yarn add next-auth
+
+└── pages
+    └── api
+        ├── auth
+        |   └── [...nextauth].js
+        
+```
+- Github sayfasından developer settingten token al.
+- Bu tokenları .env.local sayfasında tut.
+- Diğer ilgili kısımlar için ise  [buradan devam ediniz](https://next-auth.js.org/getting-started/example) 
+
+
 ### NextJs ile birlikte dil seçenegi kullanmak için 
 ```
 yarn add next-i18next
