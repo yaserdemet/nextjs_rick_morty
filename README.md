@@ -19,6 +19,10 @@
 
 🛠 Next Router
 
+🛠 Server Side Rendering
+
+🛠 Static Side Generation
+
 ### NextJs Auth kullanmak için;
 
 ```
